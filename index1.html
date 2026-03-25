@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Home</title>
+    <title>Protected Page</title>
+    <script>
+        function checkPassword() {
+            var password = prompt("Enter password:");
+            if (password === "paojdijbeafhbaoncdlkwnfqwkingf;sa;a[asdm[o]]") {
+                window.location.href = "nextpage.html"; // redirect
+            } else {
+                alert("Wrong password!");
+                checkPassword(); // ask again
+            }
+        }
+    </script>
 </head>
-<body>
-<h1>Welcome user</h>
+<body onload="checkPassword()">
+    <h2>Checking password...</h2>
 
 <a href="about.html">About Us</a> |
 <a href="contact.html">Contact</a>
